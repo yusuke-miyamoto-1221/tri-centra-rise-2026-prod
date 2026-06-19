@@ -1,0 +1,9 @@
+name = "tri-centra-rise-2026-prod"
+compatibility_date = "2026-06-19"
+
+# Cloudflare Workers (Static Assets only) として配信
+# Workerコード(main)は無し → 認証も不要、純粋な静的サイトとして動作
+# preview/ や Basic Auth は preview用Workers (tri-centra-rise2026) 側のまま継続
+[assets]
+directory = "./"
+not_found_handling = "404-page"
