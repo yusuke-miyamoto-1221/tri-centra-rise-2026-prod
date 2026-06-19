@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>TRI-CENTRA-RISE 2026</title>
+  <!-- TOP: YELLOW (RISE/CENTRA) -->
+  <polygon points="32,4 46,28 18,28" fill="#ffc72c"/>
+  <!-- BOTTOM-LEFT: CYAN (TRI) -->
+  <polygon points="18,28 32,52 4,52" fill="#0096db"/>
+  <!-- BOTTOM-RIGHT: CORAL (TRI) -->
+  <polygon points="46,28 60,52 32,52" fill="#ff6b7a"/>
+  <!-- CENTER inverted: DARK (CENTRA = central convergence point) -->
+  <polygon points="32,52 46,28 18,28" fill="#1f2a37"/>
+</svg>

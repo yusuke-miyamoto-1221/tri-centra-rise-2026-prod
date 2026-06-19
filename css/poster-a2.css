@@ -1,0 +1,640 @@
+/* ============================================================
+   TRI-CENTRA-RISE 2026 — A2 POSTER
+   レイアウト・記載位置・ボリュームは D-CROSS TAKASAKI（群馬）版に準拠。
+   テイスト（パレット・モチーフ・ロゴ）は東海 LP（docomo風 三角モチーフ）に差し替え。
+   サイズ: A2 タテ 420mm × 594mm
+   下限フォントサイズ: 14pt（広告審査番号のみ 8pt 例外）
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --tk-blue: #0096db;        /* docomoブルー（テーマ主色） */
+  --tk-blue-dark: #007bb5;
+  --tk-coral: #ff6b7a;       /* コーラルピンク（サブ） */
+  --tk-coral-dark: #e94f60;
+  --tk-yellow: #ffc72c;
+  --tk-mint: #4bd6b5;
+  --tk-ink: #1f2a37;
+  --gradient: linear-gradient(135deg, #0096db 0%, #ff6b7a 100%);
+  --gradient-multi: linear-gradient(90deg, #0096db 0%, #4bd6b5 28%, #ffc72c 56%, #ff6b7a 100%);
+  --black: #1f2a37;
+  --text: #2a3a48;
+  --text-light: #5a6b7a;
+  --gray-border: #dfe8ef;
+  --bg-base: #f4fafd;
+  --white: #FFFFFF;
+  --font-ja: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'メイリオ', sans-serif;
+  --font-en: 'Outfit', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+@page { size: A2 portrait; margin: 0; }
+
+html { font-size: 12pt; }
+
+/* ================================================
+   印刷／PDF 出力時：1枚物 A2 でぴったり収める
+   ================================================ */
+@media print {
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: var(--white) !important;
+    width: 420mm !important;
+    height: 593mm !important;
+    overflow: hidden !important;
+  }
+  .page.page-poster {
+    width: 420mm !important;
+    height: 593mm !important;
+    max-height: 593mm !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    break-after: avoid;
+    break-inside: avoid;
+  }
+  .footer-meta {
+    padding-bottom: 58mm !important;
+  }
+}
+
+body {
+  font-family: var(--font-ja);
+  color: var(--text);
+  background: #cccccc;
+  font-feature-settings: "palt";
+  letter-spacing: 0.02em;
+  -webkit-font-smoothing: antialiased;
+  padding: 20px 0;
+}
+
+img { max-width: 100%; display: block; }
+
+.page.page-poster {
+  width: 420mm;
+  height: 594mm;
+  margin: 0 auto 20px;
+  background: var(--bg-base);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.22);
+  color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ====================================================
+   右上 補助事業者ロゴ（NTTドコモ）
+   ※ docomo ロゴ画像を assets/images/ntt-docomo-logo.png に配置すると表示されます。
+   ==================================================== */
+.poster-corp-logo {
+  position: absolute;
+  top: 6mm;
+  right: 14mm;
+  width: 64mm;
+  height: auto;
+  z-index: 10;
+}
+.poster-corp-logo--text {
+  position: absolute;
+  top: 8mm;
+  right: 16mm;
+  z-index: 10;
+  font-family: var(--font-ja);
+  font-size: 18pt;
+  font-weight: 800;
+  color: var(--tk-ink);
+  letter-spacing: 0.06em;
+}
+.poster-corp-logo--text small {
+  display: block;
+  font-family: var(--font-en);
+  font-size: 11pt;
+  font-weight: 600;
+  color: var(--text-light);
+  letter-spacing: 0.16em;
+  text-align: right;
+  margin-bottom: 0.5mm;
+}
+
+/* ====================================================
+   TOP BAND（ブランドカラー強調・透明背景）
+   ==================================================== */
+.top-band {
+  background: transparent;
+  color: var(--text);
+  padding: 8mm 92mm 7mm 84mm;
+  border-bottom: 2.4px solid var(--gray-border);
+  position: relative;
+  flex-shrink: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+}
+.top-band::before {
+  content: '';
+  position: absolute;
+  left: 84mm;
+  bottom: 0;
+  width: 120mm;
+  height: 3pt;
+  background: var(--gradient-multi);
+}
+.top-band-text {
+  font-family: var(--font-ja);
+  font-size: 23pt;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-align: left;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4mm;
+  flex-wrap: wrap;
+  color: var(--text);
+}
+.top-band-label {
+  display: inline-block;
+  padding: 1.2mm 5mm;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-en);
+  font-size: 16pt;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  border-radius: 1.2mm;
+  line-height: 1.2;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+.top-band-area {
+  font-weight: 900;
+  background: linear-gradient(90deg, var(--tk-blue), var(--tk-coral));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  letter-spacing: 0.02em;
+}
+.top-band-target {
+  font-weight: 900;
+  color: var(--tk-blue);
+  border-bottom: 3px solid var(--tk-blue);
+  padding-bottom: 0.6mm;
+}
+
+/* ====================================================
+   HERO（三角モチーフ：3つの三角が中央に集まる）
+   ==================================================== */
+.hero {
+  position: relative;
+  flex-shrink: 0;
+  padding: 20mm 24mm 14mm;
+  background: linear-gradient(135deg, #f4fafd 0%, #eaf6fc 100%);
+  overflow: hidden;
+}
+.hero-tri-deco {
+  position: absolute;
+  pointer-events: none;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+.hero-tri-deco--1 {
+  top: -14mm;
+  left: -22mm;
+  width: 150mm;
+  height: 150mm;
+  background: var(--gradient-multi);
+  opacity: 0.10;
+  transform: rotate(8deg);
+}
+.hero-tri-deco--2 {
+  bottom: -30mm;
+  right: -18mm;
+  width: 170mm;
+  height: 170mm;
+  background: linear-gradient(135deg, var(--tk-blue), var(--tk-coral));
+  opacity: 0.08;
+  transform: rotate(-16deg);
+}
+.hero-particles { position: absolute; inset: 0; pointer-events: none; }
+.hero-particles span {
+  position: absolute;
+  width: 7mm;
+  height: 6mm;
+  opacity: 0.72;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+.hero-particles .p-1  { top: 16mm;  left: 32mm;  background: var(--tk-blue); }
+.hero-particles .p-2  { top: 42mm;  left: 80mm;  background: var(--tk-coral); width: 5mm; height: 4.5mm; }
+.hero-particles .p-3  { top: 22mm;  right: 60mm; background: var(--tk-yellow); width: 6mm; height: 5mm; transform: rotate(180deg); }
+.hero-particles .p-4  { top: 88mm;  left: 20mm;  background: var(--tk-mint); width: 5mm; height: 4.5mm; }
+.hero-particles .p-5  { top: 110mm; right: 36mm; background: var(--tk-blue); width: 6mm; height: 5mm; transform: rotate(180deg); }
+.hero-particles .p-6  { top: 150mm; left: 70mm;  background: var(--tk-coral); width: 5mm; height: 4.5mm; }
+.hero-particles .p-7  { top: 180mm; right: 80mm; background: var(--tk-yellow); width: 7mm; height: 6mm; }
+.hero-particles .p-8  { bottom: 60mm; left: 32mm; background: var(--tk-blue); width: 5mm; height: 4.5mm; transform: rotate(180deg); }
+.hero-particles .p-9  { bottom: 90mm; right: 28mm; background: var(--tk-mint); width: 6mm; height: 5mm; }
+.hero-particles .p-10 { bottom: 30mm; left: 100mm; background: var(--tk-coral); width: 5mm; height: 4.5mm; }
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.hero-catch {
+  font-family: var(--font-ja);
+  font-weight: 900;
+  color: var(--black);
+  letter-spacing: 0.04em;
+}
+.hero-catch-line1 {
+  display: block;
+  font-size: 27pt;
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--black);
+  letter-spacing: 0.04em;
+  margin-bottom: 4mm;
+}
+.hero-catch-line2 {
+  display: block;
+  font-size: 33pt;
+  font-weight: 900;
+  line-height: 1.3;
+  color: var(--black);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.hero-catch-accent {
+  color: var(--tk-coral);
+  font-weight: 900;
+}
+.hero-logo-wrap {
+  margin: 24mm 0 14mm;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+}
+.hero-logo-img {
+  width: 330mm;
+  max-width: 94%;
+  height: auto;
+  display: block;
+}
+.hero-tagline {
+  font-family: var(--font-ja);
+  font-size: 30pt;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  margin-top: 4mm;
+}
+.hero-tagline-accent {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+}
+
+/* ====================================================
+   KEY MESSAGE BOX
+   ==================================================== */
+.keymsg {
+  background: linear-gradient(135deg, #007bb5 0%, #e94f60 100%);
+  color: var(--white);
+  padding: 12mm 30mm 12mm;
+  flex-shrink: 0;
+}
+.keymsg-inner { max-width: 380mm; margin: 0 auto; }
+.keymsg-line {
+  font-family: var(--font-ja);
+  font-size: 22pt;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  margin-bottom: 5mm;
+}
+.keymsg-line:last-child { margin-bottom: 0; }
+.keymsg-line strong { font-weight: 900; color: #fff0c2; }
+.keymsg-highlight {
+  padding-top: 6mm;
+  margin-top: 4mm;
+  border-top: 1.5px solid rgba(255,255,255,0.32);
+  font-size: 24pt;
+}
+.keymsg-amount {
+  display: inline-block;
+  color: #fff0c2;
+  padding: 0;
+  font-weight: 900;
+  font-size: 40pt;
+  margin: 0 2mm;
+  vertical-align: baseline;
+  text-shadow: 0 0.5mm 0 rgba(0, 0, 0, 0.18);
+}
+.keymsg-amount-num {
+  font-family: var(--font-en);
+  font-size: 52pt;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-right: 1.5mm;
+}
+.keymsg-amount-note {
+  font-size: 16pt;
+  font-weight: 600;
+  color: var(--white);
+  margin-left: 3mm;
+  vertical-align: middle;
+}
+.keymsg-amount-mark {
+  display: inline-block;
+  font-size: 14pt;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1;
+  vertical-align: super;
+  margin-left: 1mm;
+}
+.keymsg-note {
+  margin: 5mm 0 0;
+  font-family: var(--font-ja);
+  font-size: 14pt;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+/* ====================================================
+   ENTRY BLOCK（募集要項）
+   ==================================================== */
+.entry-block {
+  position: relative;
+  padding: 8mm 30mm 4mm;
+  flex: 1 1 auto;
+  background: var(--bg-base);
+}
+.entry-head {
+  display: flex;
+  align-items: baseline;
+  gap: 6mm;
+  margin-bottom: 12mm;
+  padding-bottom: 5mm;
+  border-bottom: 3px solid var(--black);
+}
+.entry-head-mark {
+  font-family: var(--font-en);
+  font-size: 30pt;
+  font-weight: 400;
+  color: var(--tk-coral);
+  line-height: 1;
+}
+.entry-head-en {
+  font-family: var(--font-en);
+  font-size: 16pt;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  color: var(--text-light);
+  text-transform: uppercase;
+}
+.entry-head-ja {
+  font-family: var(--font-ja);
+  font-size: 28pt;
+  font-weight: 900;
+  color: var(--black);
+  letter-spacing: 0.06em;
+}
+
+/* 公式サイト誘導 CTA（entry-list の直上） */
+.latest-info-cta {
+  display: flex;
+  align-items: center;
+  gap: 5mm;
+  margin: 0 0 8mm;
+  padding: 4mm 8mm;
+  background: linear-gradient(135deg, rgba(0,150,219,0.10) 0%, rgba(255,107,122,0.10) 100%);
+  border-left: 5px solid var(--tk-coral);
+  border-radius: 0 1.5mm 1.5mm 0;
+  font-family: var(--font-ja);
+  font-size: 19pt;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+.lic-mark {
+  flex-shrink: 0;
+  font-family: var(--font-en);
+  font-size: 26pt;
+  font-weight: 900;
+  color: var(--tk-coral);
+  line-height: 1;
+}
+.lic-text strong {
+  color: var(--tk-blue);
+  font-weight: 900;
+}
+.lic-text strong + strong { color: var(--tk-coral); }
+
+.entry-list { display: flex; flex-direction: column; gap: 4.5mm; }
+.entry-row {
+  display: grid;
+  grid-template-columns: 70mm 1fr;
+  gap: 8mm;
+  align-items: baseline;
+  padding: 3mm 0;
+  border-bottom: 1px dashed var(--gray-border);
+}
+.entry-row:last-child { border-bottom: none; }
+.entry-label {
+  font-family: var(--font-ja);
+  font-size: 18pt;
+  font-weight: 800;
+  color: var(--black);
+  letter-spacing: 0.1em;
+}
+.entry-label--accent {
+  color: var(--tk-coral);
+}
+.entry-value {
+  font-family: var(--font-ja);
+  font-size: 24pt;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+.entry-date {
+  font-family: var(--font-en);
+  font-size: 30pt;
+  font-weight: 900;
+  color: var(--black);
+  letter-spacing: 0.02em;
+}
+.entry-date small { font-size: 18pt; font-weight: 700; margin-left: 1mm; }
+.entry-arrow {
+  font-family: var(--font-en);
+  font-size: 28pt;
+  font-weight: 700;
+  color: var(--tk-coral);
+  margin: 0 3mm;
+}
+.entry-date--accent { color: var(--tk-coral); }
+.entry-tag {
+  display: inline-block;
+  margin-left: 4mm;
+  padding: 1.2mm 4.5mm;
+  background: var(--tk-coral);
+  color: var(--white);
+  font-family: var(--font-en);
+  font-size: 16pt;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  border-radius: 0.8mm;
+  vertical-align: 2mm;
+}
+.entry-note {
+  display: block;
+  margin-top: 2mm;
+  font-family: var(--font-ja);
+  font-size: 14pt;
+  font-weight: 500;
+  color: var(--text-light);
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
+.entry-venue-item {
+  display: flex;
+  align-items: baseline;
+  gap: 4mm;
+  margin: 0 0 3mm;
+  font-size: 17pt;
+  line-height: 1.5;
+}
+.entry-venue-item:last-child { margin-bottom: 0; }
+.entry-venue-tag {
+  flex-shrink: 0;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 1.2mm 2mm;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-ja);
+  font-size: 14pt;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  width: 65mm;
+  text-align: center;
+  border-radius: 0.8mm;
+}
+.entry-venue {
+  font-family: var(--font-ja);
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* QR — entry-block 右下 */
+.entry-qr-side {
+  position: absolute;
+  bottom: 6mm;
+  right: 28mm;
+  width: 60mm;
+  text-align: center;
+  z-index: 2;
+}
+.qr-box {
+  width: 60mm;
+  height: 60mm;
+  background: var(--white);
+  border: 1.5px solid var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-en);
+  font-size: 18pt;
+  font-weight: 700;
+  color: var(--text-light);
+  letter-spacing: 0.1em;
+  border-radius: 1mm;
+  overflow: hidden;
+}
+.qr-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.qr-label {
+  margin: 3mm 0 0;
+  font-family: var(--font-ja);
+  font-size: 14pt;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.qr-url {
+  margin: 1mm 0 0;
+  font-family: var(--font-en);
+  font-size: 10pt;
+  font-weight: 500;
+  color: var(--text-light);
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* 応募締切行のみ右側に余白（QR と被らない） */
+.entry-block .entry-row--deadline { padding-right: 78mm; }
+
+/* ====================================================
+   FOOTER（hosts-band + footer-meta）
+   ==================================================== */
+.hosts-band {
+  flex-shrink: 0;
+  margin-top: auto;
+  background: #eef5fa;
+  border-top: 2px solid var(--gray-border);
+}
+.footer-meta {
+  padding: 12mm 22mm 18mm;
+  position: relative;
+}
+.footer-contact {
+  font-family: var(--font-ja);
+  font-size: 15pt;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  margin-bottom: 2mm;
+}
+.footer-note {
+  font-family: var(--font-ja);
+  font-size: 14pt;
+  font-weight: 500;
+  color: var(--text-light);
+  letter-spacing: 0.02em;
+  line-height: 1.55;
+}
+.footer-akatsuki {
+  position: absolute;
+  right: 22mm;
+  top: 18mm;
+  bottom: auto;
+  width: 63mm;
+}
+.footer-meta .footer-contact {
+  padding-right: 70mm;
+}
+.footer-akatsuki img { width: 100%; }
+
+/* 広告審査番号（8pt 例外・右詰め） */

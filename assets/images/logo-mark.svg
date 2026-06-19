@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>TRI-CENTRA-RISE 2026 マークのみ</title>
+  <desc>3つの三角形が中央に集まりRISEを表現するシンボル</desc>
+  <!-- TOP: YELLOW -->
+  <polygon points="100,20 144,100 56,100" fill="#ffc72c"/>
+  <!-- BOTTOM-LEFT: CYAN -->
+  <polygon points="56,100 100,180 12,180" fill="#0096db"/>
+  <!-- BOTTOM-RIGHT: CORAL -->
+  <polygon points="144,100 188,180 100,180" fill="#ff6b7a"/>
+  <!-- CENTER inverted: DARK NAVY -->
+  <polygon points="100,180 144,100 56,100" fill="#1f2a37"/>
+</svg>

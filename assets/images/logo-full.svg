@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="800" height="200">
+  <title>TRI-CENTRA-RISE 2026 ロゴ（マーク+プログラム名）</title>
+  <desc>TRI-CENTRA-RISE 2026 東海イノベーション・プログラム / TOKAI INNOVATION PROGRAM</desc>
+
+  <!-- マーク（左） -->
+  <g transform="translate(20, 30)">
+    <polygon points="70,0 100,55 40,55" fill="#ffc72c"/>
+    <polygon points="40,55 70,110 10,110" fill="#0096db"/>
+    <polygon points="100,55 130,110 70,110" fill="#ff6b7a"/>
+    <polygon points="70,110 100,55 40,55" fill="#1f2a37"/>
+  </g>
+
+  <!-- 縦区切り罫線 -->
+  <line x1="180" y1="40" x2="180" y2="160" stroke="#1f2a37" stroke-opacity="0.15" stroke-width="1"/>
+
+  <!-- テキストグループ（右） -->
+  <g transform="translate(200, 0)">
+
+    <!-- 1行目: TRI-CENTRA-RISE 2026 (tspan dxで間隔を強制確保) -->
+    <text x="0" y="92" font-family="'Outfit', 'Helvetica Neue', 'Arial', sans-serif" font-size="42" font-weight="800">
+      <tspan fill="#1f2a37" letter-spacing="0.5">TRI-CENTRA-RISE</tspan><tspan dx="34" font-size="36" font-weight="700" fill="#ff6b7a" letter-spacing="1">2026</tspan>
+    </text>
+
+    <!-- 横区切り線 -->
+    <line x1="0" y1="110" x2="540" y2="110" stroke="#0096db" stroke-opacity="0.25" stroke-width="1"/>
+
+    <!-- 2行目: 東海イノベーション・プログラム -->
+    <text x="0" y="135" font-family="'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'Yu Gothic', 'メイリオ', Meiryo, sans-serif" font-size="14" font-weight="700" fill="#2d4f6b" letter-spacing="2.4">東海イノベーション・プログラム</text>
+
+    <!-- 区切り | + 英語サブ -->
+    <text x="260" y="135" font-family="'Outfit', sans-serif" font-size="14" font-weight="300" fill="#cccccc">|</text>
+    <text x="276" y="135" font-family="'Outfit', 'Helvetica Neue', sans-serif" font-size="11" font-weight="600" fill="#5a6b7a" letter-spacing="3.8">TOKAI INNOVATION PROGRAM</text>
+  </g>
+</svg>
