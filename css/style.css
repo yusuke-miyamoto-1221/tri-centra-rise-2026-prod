@@ -2144,6 +2144,11 @@ header nav a:hover { color: var(--red); }
 
 /* index hero CTA: 受付中状態の見た目調整(prep状態と差別化) */
 .tcr-entry-prep--active {
+  /* block-level flexにして必ずボタンより上の独立行に配置 */
+  display: flex !important;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 24px !important;
   border-style: solid !important;
   border-color: rgba(0,150,219,0.55) !important;
   background: linear-gradient(135deg, rgba(0,150,219,0.10), rgba(75,214,181,0.10)) !important;
