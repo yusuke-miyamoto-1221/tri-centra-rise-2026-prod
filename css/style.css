@@ -2094,6 +2094,68 @@ header nav a:hover { color: var(--red); }
   color: var(--white);
 }
 
+/* === エントリー受付中（NOW ACCEPTING）===*/
+.entry-prep-box--active {
+  border-color: rgba(0,150,219,0.35) !important;
+  background: linear-gradient(135deg, rgba(0,150,219,0.06), rgba(75,214,181,0.08)) !important;
+}
+.entry-prep-label--active {
+  background: linear-gradient(135deg, #0096db, #4bd6b5) !important;
+  color: #fff !important;
+}
+.entry-prep-label--active .entry-prep-label-dot {
+  background: #fff !important;
+  box-shadow: 0 0 12px rgba(255,255,255,0.85) !important;
+}
+.entry-form-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 48px;
+  margin: 8px 0 12px;
+  font-size: 17px;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, #0096db 0%, #ff6b7a 100%);
+  border-radius: 60px;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  box-shadow: 0 12px 32px rgba(0,150,219,0.32), 0 6px 16px rgba(255,107,122,0.20);
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s;
+}
+.entry-form-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 20px 48px rgba(0,150,219,0.42), 0 10px 24px rgba(255,107,122,0.28);
+}
+.entry-form-btn-arrow {
+  font-size: 20px;
+  transition: transform 0.3s;
+}
+.entry-form-btn:hover .entry-form-btn-arrow {
+  transform: translateX(6px);
+}
+.entry-form-note {
+  font-size: 12px;
+  color: var(--text-light);
+  margin: 0 0 28px;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+
+/* index hero CTA: 受付中状態の見た目調整(prep状態と差別化) */
+.tcr-entry-prep--active {
+  border-style: solid !important;
+  border-color: rgba(0,150,219,0.55) !important;
+  background: linear-gradient(135deg, rgba(0,150,219,0.10), rgba(75,214,181,0.10)) !important;
+}
+.tcr-entry-prep--active strong {
+  color: #0096db !important;
+}
+.tcr-entry-prep--active .tcr-entry-prep-dot {
+  background: #10b981 !important;
+  box-shadow: 0 0 14px rgba(16,185,129,0.85) !important;
+}
+
 /* ===== FOOTER ===== */
 footer {
   background: #f2f2f2;
